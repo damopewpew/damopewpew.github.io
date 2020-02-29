@@ -208,17 +208,52 @@
  */
 .post-header {
   margin-bottom: $spacing-unit;
+  color: $yellow;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.post-arrow {
+    background-color: $black;
+    color: $orange;
+    font-size: 20px;
+    padding: 0;
+    margin: 0;
+    line-height:1.30;
+      @include media-query($on-laptop) {
+            font-size: 17px;
+        }
+}
+
+.post-arrow-grey {
+    background-color: $orange;
+    color: $grey;
 }
 
 .post-title {
-  font-size: 32px;
-  letter-spacing: -1px;
-  line-height: 1;
-  color: $yellow;
+    text-transform: uppercase;
+    line-height: 1.0;
+    margin: 0;
+    padding: 4px 20px 4px 20px;
+      font-size: 18px;
+      align-items: center;
+      align-self: center;
+      color: $white;
+      max-height: 24px;
 
-  @include media-query($on-laptop) {
-    font-size: 26px;
-  }
+  background-color: $orange;
+      @include media-query($on-laptop) {
+        font-size: 14px;
+        overflow: hidden;
+        word-wrap: none;
+        white-space: nowrap;
+      }
+}
+
+.post-title-grey {
+    background-color: $grey;
+    color: $text-color;
 }
 
 .post-content {
@@ -235,14 +270,31 @@
   }
 
   h3 {
-    font-size: 20px;
-    margin: 15px 0;
-    color: $blue;
+    padding: 2px 0px 2px 20px;
+    font-size: 18px;
+    color: $black;
+    background-color: $green;
+    display: inline;
+    text-transform: uppercase;
 
     @include media-query($on-laptop) {
-      font-size: 18px;
+      font-size: 14px;
     }
   }
+
+  h3::after {
+      margin-top: 40px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+      display: inline-block;
+        content: "";
+        background-color: $black;
+        color: $green;
+        font-size: 20px;
+    @include media-query($on-laptop) {
+      font-size: 15px;
+    }
+    }
 
   h4 {
     font-size: 18px;
@@ -252,7 +304,6 @@
     }
   }
 }
-
 
 
 /** 
