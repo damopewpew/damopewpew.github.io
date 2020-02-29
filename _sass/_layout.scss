@@ -271,7 +271,7 @@
 
   h3 {
     padding: 2px 0px 2px 20px;
-    font-size: 18px;
+    font-size: 14px;
     color: $black;
     background-color: $green;
     display: inline;
@@ -290,7 +290,7 @@
         content: "";
         background-color: $black;
         color: $green;
-        font-size: 20px;
+        font-size: 15px;
     @include media-query($on-laptop) {
       font-size: 15px;
     }
