@@ -21,13 +21,13 @@ After some research I found that you can use the command `wsl` from a Windows co
 The next issue was converting our Windows path into a Linux path. Thankfully WSL provides us a with an easy command `wslpath` which will convert a windows path to linux and visa versa. My next step was to create a batch file to piece all this together.
 
 __nvim.cmd__
-```batch
+{% highlight powershell %}
 @echo off
 wsl wslpath "%1" > tmpfile
 set /p filepath= < tmpfile
 del tmpfile
 wsl ~/.local/bin/nvr --servername /tmp/nvimsocket %filepath% %2
-```
+{% endhighlight %}
 
 My batch scripting is pretty terrible but this is pretty basic. It runs the command `wsl wslpath` to a tmpfile using the first command line argument as the path. It then sets variable filepath with the contents of that file and then deletes the tmp file. It then runs our `nvr` command with our filepath as the argument.
 
